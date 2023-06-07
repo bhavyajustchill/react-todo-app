@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import TodoList from "./components/TodoList";
+import Form from "./components/Form";
+import { useState } from "react";
 
 function App() {
+  const [id, setId] = useState(0);
+  const [todos, setTodos] = useState([]);
+  const handleToggle = (id) => {
+    setTodos((prevTodos) =>
+      prevTodos.map((todo) => (todo.id === id ? { ...todo, completed: !todo.completed } : todo))
+    );
+  };
+  const [newTask, setNewTask] = useState("");
+  const handleAddTask = () => {
+    if (newTask.trim() !== "") {
+      const newTodo = {
+        id: id + 1,
+        task: newTask,
+        completed: false,
+      };
+
+      setTodos((prevTodos) => [...prevTodos, newTodo]);
+      setId(id + 1);
+      setNewTask("");
+    }
+  };
+
+  const handleDeleteTask = (id) => {
+    const newTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(newTodos);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="container text-center mt-4 mb-4">
+        <h1>Todo App</h1>
+      </div>
+      <div className="container mb-4">
+        <Form newTask={newTask} handleAddTask={handleAddTask} setNewTask={setNewTask} />
+      </div>
+      <TodoList handleDeleteTask={handleDeleteTask} todos={todos} handleToggle={handleToggle} />
+    </>
   );
 }
 
 export default App;
+

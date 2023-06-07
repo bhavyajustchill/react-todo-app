@@ -1,0 +1,58 @@
+/* Tab container */
+.react-tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Tab list */
+.react-tabs__tab-list {
+  display: flex;
+  justify-content: space-around; /* Center the tabs and distribute the space */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Individual tab */
+.react-tabs__tab {
+  flex: 1; /* Distribute the available space equally */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #e0e0e0;
+  border-radius: 0;
+  background-color: #6d5593;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+}
+
+.react-tabs__tab.react-tabs__tab--selected {
+  background-color: #ddd6f4;
+  color: rgb(109, 85, 147, 1);
+  border-bottom: none !important;
+}
+.react-tabs__tab.react-tabs__tab--selected::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(109, 85, 147, 1); /* Apply the green border on the selected tab */
+}
+
+/* Tab panel */
+.react-tabs__tab-panel {
+  background-color: #fff;
+  display: none;
+  padding: 16px;
+  border: 1px solid #e0e0e0;
+}
+
+.react-tabs__tab-panel--selected {
+  display: block;
+}
