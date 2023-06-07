@@ -41,8 +41,16 @@ function App() {
         <Form newTask={newTask} handleAddTask={handleAddTask} setNewTask={setNewTask} />
       </div>
       <TodoList handleDeleteTask={handleDeleteTask} todos={todos} handleToggle={handleToggle} />
-      <div className="container">
-        <span className="float-end">
+      <div
+        style={{
+          position: "fixed",
+          left: 0,
+          bottom: 0,
+          width: "94%",
+          height: "60px",
+          backgroundColor: "#ffffe0",
+        }}>
+        <span className="float-end pt-3">
           Made with{" "}
           <span className="text-danger">
             <i className="fa fa-heart"></i>
@@ -55,4 +63,3 @@ function App() {
 }
 
 export default App;
-
