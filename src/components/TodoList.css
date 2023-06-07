@@ -1,21 +1,18 @@
-/* Tab container */
 .react-tabs {
   display: flex;
   flex-direction: column;
 }
 
-/* Tab list */
 .react-tabs__tab-list {
   display: flex;
-  justify-content: space-around; /* Center the tabs and distribute the space */
+  justify-content: space-around;
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-/* Individual tab */
 .react-tabs__tab {
-  flex: 1; /* Distribute the available space equally */
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,7 +39,7 @@
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #e04555; /* Apply the green border on the selected tab */
+  background-color: #e04555;
 }
 
 /* Tab panel */
@@ -55,5 +52,4 @@
 
 .react-tabs__tab-panel--selected {
   display: block;
-  height: 400px;
 }
