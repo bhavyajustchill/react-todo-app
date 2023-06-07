@@ -14,9 +14,8 @@ export default function Form({ newTask, handleAddTask, setNewTask }) {
           />
           <button
             type="button"
-            className="btn mx-2 rounded-circle"
-            onClick={handleAddTask}
-            style={{ backgroundColor: "#128c7e", color: "#fff" }}>
+            className="btn btn-primary mx-2 rounded-circle"
+            onClick={handleAddTask}>
             <i className="fa fa-plus"></i>
           </button>
         </div>

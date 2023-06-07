@@ -29,7 +29,7 @@ export default function TodoList({ todos, handleToggle, handleDeleteTask }) {
                   />
                 ))
               ) : (
-                <h2>No Tasks</h2>
+                <h2 className="container text-center">No Tasks</h2>
               )}
             </div>
           </TabPanel>
@@ -49,7 +49,7 @@ export default function TodoList({ todos, handleToggle, handleDeleteTask }) {
                   ) : null
                 )
               ) : (
-                <h2>No Tasks</h2>
+                <h2 className="container text-center">No Tasks</h2>
               )}
             </div>
           </TabPanel>
@@ -69,7 +69,7 @@ export default function TodoList({ todos, handleToggle, handleDeleteTask }) {
                   ) : null
                 )
               ) : (
-                <h2>No Tasks</h2>
+                <h2 className="container text-center">No Tasks</h2>
               )}
             </div>
           </TabPanel>

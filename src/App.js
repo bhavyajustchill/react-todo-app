@@ -35,11 +35,21 @@ function App() {
     <>
       <div className="container text-center mt-4 mb-4">
         <h1>Todo App</h1>
+        <h6>Your easy-to-use Task Management Application!</h6>
       </div>
       <div className="container mb-4">
         <Form newTask={newTask} handleAddTask={handleAddTask} setNewTask={setNewTask} />
       </div>
       <TodoList handleDeleteTask={handleDeleteTask} todos={todos} handleToggle={handleToggle} />
+      <div className="container">
+        <span className="float-end">
+          Made with{" "}
+          <span className="text-danger">
+            <i className="fa fa-heart"></i>
+          </span>{" "}
+          by BhavyaJustChill
+        </span>
+      </div>
     </>
   );
 }
